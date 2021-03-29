@@ -51,11 +51,23 @@ function App() {
   return (
     <div className="App">
       <Layout>
-        <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-          {/* <div className="logo" /> */}
-          
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-          <Menu.Item key="0">
+        <Header style={{ position: 'fixed', zIndex: 1, width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+          <div className="logo" />
+          <AutoComplete
+              dropdownMatchSelectWidth={252}
+              style={{
+                width: 300,
+                display: 'flex',
+                alignItems: 'center'
+              }}
+              options={options}
+              onSelect={onSelect}
+              onSearch={handleSearch}
+            >
+                <Input.Search size="large" placeholder="input here" enterButton />
+            </AutoComplete>
+          <Menu theme="dark" mode="horizontal">
+          {/* <Menu.Item key="0">
               <AutoComplete
               dropdownMatchSelectWidth={252}
               style={{
@@ -67,14 +79,14 @@ function App() {
               onSearch={handleSearch}
             >
                 <Input.Search size="large" placeholder="input here" enterButton />
-              </AutoComplete>
-            </Menu.Item>
+            </AutoComplete>
+            </Menu.Item> */}
             <Menu.Item key="1">Songs</Menu.Item>
             <Menu.Item key="2">Artists</Menu.Item>
             <Menu.Item key="3">Playlists</Menu.Item>
           </Menu>
         </Header>
-        <Content className="site-layout"style={{ padding: '0 50px', height: '100%'}}>
+        <Content className="site-layout"style={{ padding: '0 50px'}}>
           <Breadcrumb style={{ margin: '16px 0' }}>
             <Breadcrumb.Item>Home</Breadcrumb.Item>
             <Breadcrumb.Item>List</Breadcrumb.Item>
@@ -84,7 +96,7 @@ function App() {
             Content
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>African ©2021 Created by King Code</Footer>
+        <Footer style={{ textAlign: 'center' }}>African Artists ©2021 Created by King Code</Footer>
       </Layout>
     </div>
   );
