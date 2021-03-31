@@ -1,6 +1,7 @@
 import './App.css';
 import 'antd/dist/antd.css';
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import MapChart from './components/MapChart';
 import { AutoComplete, Input, Layout, Menu, Breadcrumb } from 'antd';
 const { Header, Content, Footer } = Layout;
 
@@ -64,7 +65,7 @@ function App() {
               onSelect={onSelect}
               onSearch={handleSearch}
             >
-                <Input.Search size="large" placeholder="input here" enterButton />
+                <Input.Search placeholder="Search for artists..." enterButton />
             </AutoComplete>
           <Menu theme="dark" mode="horizontal">
           {/* <Menu.Item key="0">
@@ -93,7 +94,25 @@ function App() {
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
           <div className="site-layout-background" style={{ padding: 24, minHeight: 640, height: '100%'}}>
-            Content
+            <div style={{
+              width: '100%',
+              height: '90vh',
+              display: 'flex'
+            }}>
+              <div style={{
+              width: '100%',
+              height: '100%',
+            }}>
+                <MapChart/>
+              </div>
+              
+              <div style={{
+              width: '100%',
+              height: '100%',
+            }}>
+                App Display container
+              </div>
+            </div>
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>African Artists ©2021 Created by King Code</Footer>
