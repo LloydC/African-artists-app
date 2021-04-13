@@ -11,6 +11,20 @@ const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-map
 
 const africanMarkers = countries.filter(country => country.ContinentName === "Africa").map(country => {return {name: country.CapitalName, coordinates: [country.CapitalLongitude, country.CapitalLatitude], markerOffset: -15}})
 
+const geographyStyles = {
+  fill: "#ECEFF1",
+  stroke: "#607D8B",
+  strokeWidth: 0.75,
+  outline: "none",
+}
+
+const hoverStyles = {
+  fill: "#fff",
+  stroke: "#607D8B",
+  strokeWidth: 0.75,
+  outline: "none",
+}
+
 const MapChart = ({ setTooltipContent }) => {
   return (
     <>
@@ -23,7 +37,15 @@ const MapChart = ({ setTooltipContent }) => {
       >
         <Geographies geography={geoUrl}>
             {({ geographies }) =>
-            geographies.map(geo => <Geography key={geo.rsmKey} geography={geo} />)
+            geographies.map(geo => 
+            <Geography 
+              key={geo.rsmKey} 
+              geography={geo}  
+              style={{
+              default: geographyStyles,
+              hover: hoverStyles,
+              pressed: geographyStyles,
+              }}/>)
             }
         </Geographies>
         

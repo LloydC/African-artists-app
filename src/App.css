@@ -47,7 +47,11 @@
 .site-layout .site-layout-background {
   background: #fff;
 }
-
+rect:hover {
+   stroke: black;
+   fill: blue;
+ }
+ 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
