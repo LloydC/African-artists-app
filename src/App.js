@@ -1,7 +1,8 @@
 import './App.css';
 import 'antd/dist/antd.css';
 import React, {useState} from 'react';
-import MapChart from './components/MapChart';
+// import MapChart from './components/MapChart';
+import AfricaMap from './components/AfricaMap';
 import { AutoComplete, Input, Layout, Menu, Breadcrumb } from 'antd';
 const { Header, Content, Footer } = Layout;
 
@@ -103,7 +104,8 @@ function App() {
               width: '100%',
               height: '100%',
             }}>
-                <MapChart/>
+                {/* <MapChart/> */}
+                <AfricaMap/>
               </div>
               
               <div style={{
