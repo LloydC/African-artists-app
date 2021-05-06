@@ -29,8 +29,16 @@ function Home() {
               <div style={{
               width: '100%',
               height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center'
             }}>
-                App Display container
+                <h1>Welcome Username</h1>
+                <br/>
+                <p>Check out the map or search for Artists we know with African Heritage</p>
+                <br/>
+                <p>Feel free to add them to your playlist below</p>
               </div>
             </div>
           </div>

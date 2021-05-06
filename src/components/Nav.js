@@ -50,7 +50,9 @@ function Nav({isLoggedIn}) {
     if(isLoggedIn){
         return (
             <Header style={{ position: 'fixed', zIndex: 1, width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+
             <Link to="/"><div className="logo" /></Link>
+
             <AutoComplete
                 dropdownMatchSelectWidth={252}
                 style={{
@@ -63,11 +65,13 @@ function Nav({isLoggedIn}) {
                 onSearch={handleSearch}
               >
                   <Input.Search placeholder="Search for artists..." enterButton />
-              </AutoComplete>
+            </AutoComplete>
+
             <Menu theme="dark" mode="horizontal">
               <Menu.Item key="1"><Link to="/login">Login</Link></Menu.Item>
               <Menu.Item key="2"><Link to="/register">Register</Link></Menu.Item>
             </Menu>
+            
           </Header>
         )
     }
