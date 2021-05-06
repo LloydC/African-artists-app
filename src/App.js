@@ -1,7 +1,11 @@
 import './App.css';
 import 'antd/dist/antd.css';
 import React from 'react';
-// import MapChart from './components/MapChart';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import Nav from './components/Nav';
 import Home from './pages/Home';
 import { Layout } from 'antd';
@@ -10,15 +14,25 @@ const { Footer } = Layout;
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Layout>
-        <Nav isLoggedIn={true}/>
+      <Nav isLoggedIn={true}/>
 
-        <Home/>
-
+        <Switch>
+        <Route path="/">
+            <Home />
+          </Route>
+          {/* <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/topics">
+            <Topics />
+          </Route> */}
+          
+        </Switch>
         <Footer style={{ textAlign: 'center' }}>African Artists ©2021 Created by King Code</Footer>
       </Layout>
-    </div>
+    </Router>
   );
 }
 
