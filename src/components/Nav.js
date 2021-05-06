@@ -64,14 +64,14 @@ function Nav({isLoggedIn}) {
                 onSelect={onSelect}
                 onSearch={handleSearch}
               >
-                  <Input.Search placeholder="Search for artists..." enterButton />
+                  <Input.Search placeholder="Search for artists..." enterButton size="large"/>
             </AutoComplete>
 
             <Menu theme="dark" mode="horizontal">
               <Menu.Item key="1"><Link to="/login">Login</Link></Menu.Item>
               <Menu.Item key="2"><Link to="/register">Register</Link></Menu.Item>
             </Menu>
-            
+
           </Header>
         )
     }

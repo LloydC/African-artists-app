@@ -3,19 +3,19 @@ import { VectorMap } from '@south-paw/react-vector-maps';
 import styled from 'styled-components'
 import africa from '../assets/africa.json';
 
-const style = { margin: '1rem auto'};
+const style = { margin: '4rem auto'};
 
-const Map = () =>{
-    const [hovered, setHovered] = useState('None');
-    const [focused, setFocused] = useState('None');
-    const [clicked, setClicked] = useState('None');
+const Map = ({ hovered, setHovered, focused, setFocused, clicked, setClicked}) =>{
+    const [countryHovered, setCountryHovered] = useState(hovered);
+    // const [countryFocused, setCountryFocused] = useState(focused);
+    const [countryClicked, setCountryClicked] = useState(clicked);
 
     const layerProps = {
-        onMouseEnter: ({ target }) => setHovered(target.attributes.name.value),
-        onMouseLeave: ({ target }) => setHovered('None'),
-        onFocus: ({ target }) => setFocused(target.attributes.name.value),
-        onBlur: ({ target }) => setFocused('None'),
-        onClick: ({ target }) => setClicked(target.attributes.name.value),
+        // onBlur: ({ target }) => {setFocused('None'); setCountryFocused('None')},
+        onClick: ({ target }) => {setClicked(target.attributes.name.value); setCountryClicked(target.attributes.name.value)},
+        onMouseEnter: ({ target }) => {setHovered(target.attributes.name.value);setCountryHovered(target.attributes.name.value)},
+        onMouseLeave: ({ target }) => {setHovered('None');setCountryHovered('None')},
+        // onFocus: ({ target }) => {setFocused(target.attributes.name.value); setCountryFocused(target.attributes.name.value)},
       };
     
       const Map = styled.div`
@@ -35,7 +35,7 @@ const Map = () =>{
             fill: #001529;
           }
     
-          // When a layer is focused.
+         
           &:focus {
             fill: #001529;
           }
@@ -64,9 +64,8 @@ const Map = () =>{
             <VectorMap {...africa} layerProps={layerProps} />
           </Map>
           <hr />
-          <p>Hovered: {hovered && <code>{hovered}</code>}</p>
-          <p>Focused: {focused && <code>{focused}</code>}</p>
-          <p>Clicked: {clicked && <code>{clicked}</code>}</p>
+          <p>Hovered: {countryHovered && <code>{countryHovered}</code>}</p>
+          <p>Clicked: {countryClicked && <code>{countryClicked}</code>}</p>
         </div>
       );
 } 

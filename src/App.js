@@ -16,17 +16,17 @@ const { Footer } = Layout;
 function App() {
   return (
     <Router>
-      <Layout>
       <Nav isLoggedIn={true}/>
 
+      <Layout>
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/login" component={LoginPage}/>
           <Route exact path="/register" component={RegisterPage}/>
         </Switch>
-        
-        <Footer style={{ textAlign: 'center' }}>African Artists ©2021 Created by King Code</Footer>
       </Layout>
+      
+      <Footer style={{ textAlign: 'center' }}>African Artists ©2021 Created by King Code</Footer>
     </Router>
   );
 }

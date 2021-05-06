@@ -1,10 +1,14 @@
 import 'antd/dist/antd.css';
-import React from 'react';
+import React, { useState } from 'react';
 import AfricaMap from '../components/AfricaMap';
 import { Layout } from 'antd';
 const { Content } = Layout;
 
 function Home() {
+    const [hovered, setHovered] = useState('None');
+    // const [focused, setFocused] = useState('None');
+    const [clicked, setClicked] = useState('None');
+
     return (
         <Content className="site-layout"style={{ padding: '0 50px'}}>
           {/* <Breadcrumb style={{ margin: '16px 0' }}>
@@ -14,32 +18,43 @@ function Home() {
           </Breadcrumb> */}
           <div className="site-layout-background" style={{ padding: 24, minHeight: 640, height: '100%'}}>
             <div style={{
-              width: '100%',
-              height: '90vh',
-              display: 'flex'
+                width: '100%',
+                height: '90vh',
+                display: 'flex'
             }}>
               <div style={{
-              width: '100%',
-              height: '100%',
+                    width: '100%',
+                    height: '100%',
             }}>
                 {/* <MapChart/> */}
-                <AfricaMap/>
+                <AfricaMap hovered={hovered} clicked={clicked} setHovered={setHovered} setClicked={setClicked}/>
               </div>
               
-              <div style={{
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}>
+              {hovered === 'None' && clicked ==='None' && <div style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
                 <h1>Welcome Username</h1>
                 <br/>
                 <p>Check out the map or search for Artists we know with African Heritage</p>
                 <br/>
                 <p>Feel free to add them to your playlist below</p>
-              </div>
+              </div>}
+
+              {clicked!== 'None' && <div style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                <h1>Country clicked: {clicked}</h1>
+              </div>}
             </div>
           </div>
         </Content>
