@@ -3,7 +3,7 @@ import { Form, Input, Button } from 'antd';
 
 const layout = {
     labelCol: {
-      span: 8,
+      span: 10,
     },
     wrapperCol: {
       span: 16,
@@ -106,7 +106,7 @@ function Register() {
                 </Form.Item>
 
                 <Form.Item
-                    label="ConfirmPassword"
+                    label="Confirm Password"
                     name="confirmPassword"
                     rules={[
                     {

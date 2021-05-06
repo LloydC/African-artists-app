@@ -1,5 +1,6 @@
 import 'antd/dist/antd.css';
 import React, {useState} from 'react';
+import { Link } from "react-router-dom";
 import { AutoComplete, Input, Layout, Menu} from 'antd';
 const { Header} = Layout;
 
@@ -49,7 +50,7 @@ function Nav({isLoggedIn}) {
     if(isLoggedIn){
         return (
             <Header style={{ position: 'fixed', zIndex: 1, width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-            <div className="logo" />
+            <Link to="/"><div className="logo" /></Link>
             <AutoComplete
                 dropdownMatchSelectWidth={252}
                 style={{
@@ -64,8 +65,8 @@ function Nav({isLoggedIn}) {
                   <Input.Search placeholder="Search for artists..." enterButton />
               </AutoComplete>
             <Menu theme="dark" mode="horizontal">
-              <Menu.Item key="1">Login</Menu.Item>
-              <Menu.Item key="2">Register</Menu.Item>
+              <Menu.Item key="1"><Link to="/login">Login</Link></Menu.Item>
+              <Menu.Item key="2"><Link to="/register">Register</Link></Menu.Item>
             </Menu>
           </Header>
         )

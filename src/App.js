@@ -6,8 +6,8 @@ import {
   Route
 } from "react-router-dom";
 import Nav from './components/Nav';
-//import HomePage from './pages/Home';
-// import LoginPage from './pages/Login';
+import HomePage from './pages/Home';
+import LoginPage from './pages/Login';
  import RegisterPage from './pages/Register';
 import { Layout } from 'antd';
 const { Footer } = Layout;
@@ -20,17 +20,11 @@ function App() {
       <Nav isLoggedIn={true}/>
 
         <Switch>
-        <Route path="/">
-            <RegisterPage />
-          </Route>
-          {/* <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/topics">
-            <Topics />
-          </Route> */}
-          
+          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/login" component={LoginPage}/>
+          <Route exact path="/register" component={RegisterPage}/>
         </Switch>
+        
         <Footer style={{ textAlign: 'center' }}>African Artists ©2021 Created by King Code</Footer>
       </Layout>
     </Router>
