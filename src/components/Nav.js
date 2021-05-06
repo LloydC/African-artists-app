@@ -97,4 +97,4 @@ function Nav({isLoggedIn}) {
     }
 }
 
-export default Nav
+export default Nav;

@@ -1,5 +1,4 @@
 import './App.css';
-import 'antd/dist/antd.css';
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -7,7 +6,9 @@ import {
   Route
 } from "react-router-dom";
 import Nav from './components/Nav';
-import Home from './pages/Home';
+//import HomePage from './pages/Home';
+// import LoginPage from './pages/Login';
+ import RegisterPage from './pages/Register';
 import { Layout } from 'antd';
 const { Footer } = Layout;
 
@@ -20,7 +21,7 @@ function App() {
 
         <Switch>
         <Route path="/">
-            <Home />
+            <RegisterPage />
           </Route>
           {/* <Route path="/about">
             <About />
