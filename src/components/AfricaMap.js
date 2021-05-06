@@ -6,24 +6,21 @@ import africa from '../assets/africa.json';
 const style = { margin: '4rem auto'};
 
 const findCountryId = (name) => {
-  const country= africa.layers.find(country => country.name === name );
-  console.log('country', country)
-  return country.id;
+  return africa.layers.find(country => country.name === name ).id;
 }
 
 const Map = ({ hovered, setHovered, focused, setFocused, clicked, setClicked}) =>{
     const [countryHovered, setCountryHovered] = useState(hovered);
-    // const [countryFocused, setCountryFocused] = useState(focused);
     const [countryClicked, setCountryClicked] = useState(clicked);
+    // const [countryFocused, setCountryFocused] = useState(focused);
 
     const countryId =countryClicked !== 'None' ? findCountryId(countryClicked) : '';
-    console.log(countryId)
 
     const layerProps = {
-        // onBlur: ({ target }) => {setFocused('None'); setCountryFocused('None')},
         onClick: ({ target }) => {setClicked(target.attributes.name.value); setCountryClicked(target.attributes.name.value)},
         onMouseEnter: ({ target }) => {setHovered(target.attributes.name.value);setCountryHovered(target.attributes.name.value)},
         onMouseLeave: ({ target }) => {setHovered('None');setCountryHovered('None')},
+        // onBlur: ({ target }) => {setFocused('None'); setCountryFocused('None')},
         // onFocus: ({ target }) => {setFocused(target.attributes.name.value); setCountryFocused(target.attributes.name.value)},
       };
     
@@ -74,7 +71,6 @@ const Map = ({ hovered, setHovered, focused, setFocused, clicked, setClicked}) =
           </Map>
 
           <p>Hovered: {countryHovered && <code>{countryHovered}</code>}</p>
-          {/* <p>Clicked: {countryClicked && <code>{countryClicked}</code>}</p> */}
         </div>
       );
 } 
