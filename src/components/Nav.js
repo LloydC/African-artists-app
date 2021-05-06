@@ -46,30 +46,55 @@ function Nav({isLoggedIn}) {
   const onSelect = (value) => {
     console.log('onSelect', value);
   };
-
-    return (
-        <Header style={{ position: 'fixed', zIndex: 1, width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-        <div className="logo" />
-        <AutoComplete
-            dropdownMatchSelectWidth={252}
-            style={{
-              width: 300,
-              display: 'flex',
-              alignItems: 'center'
-            }}
-            options={options}
-            onSelect={onSelect}
-            onSearch={handleSearch}
-          >
-              <Input.Search placeholder="Search for artists..." enterButton />
-          </AutoComplete>
-        <Menu theme="dark" mode="horizontal">
-          <Menu.Item key="1">Songs</Menu.Item>
-          <Menu.Item key="2">Artists</Menu.Item>
-          <Menu.Item key="3">Playlists</Menu.Item>
-        </Menu>
-      </Header>
-    )
+    if(isLoggedIn){
+        return (
+            <Header style={{ position: 'fixed', zIndex: 1, width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+            <div className="logo" />
+            <AutoComplete
+                dropdownMatchSelectWidth={252}
+                style={{
+                  width: 300,
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+                options={options}
+                onSelect={onSelect}
+                onSearch={handleSearch}
+              >
+                  <Input.Search placeholder="Search for artists..." enterButton />
+              </AutoComplete>
+            <Menu theme="dark" mode="horizontal">
+              <Menu.Item key="1">Login</Menu.Item>
+              <Menu.Item key="2">Register</Menu.Item>
+            </Menu>
+          </Header>
+        )
+    }
+    else {
+        return (
+            <Header style={{ position: 'fixed', zIndex: 1, width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+            <div className="logo" />
+            <AutoComplete
+                dropdownMatchSelectWidth={252}
+                style={{
+                  width: 300,
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+                options={options}
+                onSelect={onSelect}
+                onSearch={handleSearch}
+              >
+                  <Input.Search placeholder="Search for artists..." enterButton />
+              </AutoComplete>
+            <Menu theme="dark" mode="horizontal">
+              <Menu.Item key="1">Songs</Menu.Item>
+              <Menu.Item key="2">Artists</Menu.Item>
+              <Menu.Item key="3">Playlists</Menu.Item>
+            </Menu>
+          </Header>
+        )
+    }
 }
 
 export default Nav

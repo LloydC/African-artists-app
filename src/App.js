@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Layout>
-        <Nav isLoggedIn={false}/>
+        <Nav isLoggedIn={true}/>
 
         <Content className="site-layout"style={{ padding: '0 50px'}}>
           <Breadcrumb style={{ margin: '16px 0' }}>
