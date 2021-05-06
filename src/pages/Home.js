@@ -24,7 +24,7 @@ function Home() {
             }}>
               <div style={{
                     width: '100%',
-                    height: '100%',
+                    height: '90vh',
             }}>
                 {/* <MapChart/> */}
                 <AfricaMap hovered={hovered} clicked={clicked} setHovered={setHovered} setClicked={setClicked}/>
