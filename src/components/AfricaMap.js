@@ -14,10 +14,20 @@ const Map = ({ hovered, setHovered, focused, setFocused, clicked, setClicked}) =
     const [countryClicked, setCountryClicked] = useState(clicked);
     // const [countryFocused, setCountryFocused] = useState(focused);
 
-    const countryId =countryClicked !== 'None' ? findCountryId(countryClicked) : '';
+    const countryId = countryClicked !== 'None' ? findCountryId(countryClicked) : '';
 
     const layerProps = {
-        onClick: ({ target }) => {setClicked(target.attributes.name.value); setCountryClicked(target.attributes.name.value)},
+        onClick: ({ target }) => {
+          if(countryClicked !== target.attributes.name.value){
+            setClicked(target.attributes.name.value); 
+            setCountryClicked(target.attributes.name.value);
+          }
+          else{
+            setClicked('None'); 
+            setCountryClicked('None');
+          }
+          
+        },
         onMouseEnter: ({ target }) => {setHovered(target.attributes.name.value);setCountryHovered(target.attributes.name.value)},
         onMouseLeave: ({ target }) => {setHovered('None');setCountryHovered('None')},
         // onBlur: ({ target }) => {setFocused('None'); setCountryFocused('None')},

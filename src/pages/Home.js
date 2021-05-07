@@ -42,7 +42,8 @@ function Home() {
                 <br/>
                 <p>Check out the map or search for Artists we know with African Heritage</p>
                 <br/>
-                <p>Feel free to add them to your playlist below</p>
+                <p>LAUNCH MUSIC PLAYER</p>
+                <iframe title="embedded-test" src="https://open.spotify.com/embed/playlist/3ctCB0A3pLPNh0KCKvwOHD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
               </div>}
 
               {clicked!== 'None' && <div style={{
@@ -50,8 +51,8 @@ function Home() {
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    padding: '8%'
                 }}>
                 <h1>Country clicked: {clicked}</h1>
               </div>}
