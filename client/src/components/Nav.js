@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 import { AutoComplete, Input, Layout, Menu} from 'antd';
 const { Header} = Layout;
 
-const getRandomInt = (max, min = 0) => {return Math.floor(Math.random() * (max - min + 1)) + min;} // eslint-disable-line no-mixed-operators
+function getRandomInt(max, min = 0) {
+  return Math.floor(Math.random() * (max - min + 1)) + min; // eslint-disable-line no-mixed-operators
+}
 
-const searchResult = (query) =>
+const searchResult = async (query) =>{
+  console.log('query', query)
   new Array(getRandomInt(5))
     .join('.')
     .split('.')
@@ -35,7 +38,52 @@ const searchResult = (query) =>
           </div>
         ),
       };
-    });
+  // const artists = await fetch(`http://localhost:3000/search-artists?artist=${query}`)
+  // console.log('artists', artists.length)
+  // const firstArtists = artists.slice(0, 19);
+  // firstArtists.map(artist => {
+  //   return {
+  //     label: (
+  //       <div
+  //           style={{
+  //             display: 'flex',
+  //             // justifyContent: 'space-between',
+  //           }}
+  //         >
+  //           <span>{artist.name}</span>
+  //         </div>
+  //     )
+  //   }
+  // })
+    
+    // artists.map((_, idx) => {
+    //   const category = `${query}${idx}`;
+    //   return {
+    //     value: category,
+    //     label: (
+    //       <div
+    //         style={{
+    //           display: 'flex',
+    //           justifyContent: 'space-between',
+    //         }}
+    //       >
+    //         <span>
+    //           Found {query} on{' '}
+    //           <a
+    //             href={`https://s.taobao.com/search?q=${query}`}
+    //             target="_blank"
+    //             rel="noopener noreferrer"
+    //           >
+    //             {category}
+    //           </a>
+    //         </span>
+    //         <span>{} results</span>
+    //       </div>
+    //     ),
+    //   };
+    // });
+  })
+}
 
 function Nav({isLoggedIn}) {
     const [options, setOptions] = useState([]);

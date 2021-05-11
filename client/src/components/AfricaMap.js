@@ -9,7 +9,7 @@ const findCountryId = (name) => {
   return africa.layers.find(country => country.name === name ).id;
 }
 
-const Map = ({ hovered, setHovered, focused, setFocused, clicked, setClicked}) =>{
+const AfricaMap = ({ hovered, setHovered, focused, setFocused, clicked, setClicked}) =>{
     //const [countryHovered, setCountryHovered] = useState(hovered);
     // const [countryFocused, setCountryFocused] = useState(focused);
     const [countryClicked, setCountryClicked] = useState(clicked);
@@ -32,7 +32,7 @@ const Map = ({ hovered, setHovered, focused, setFocused, clicked, setClicked}) =
         // onBlur: ({ target }) => {setFocused('None'); setCountryFocused('None')},
         // onFocus: ({ target }) => {setFocused(target.attributes.name.value); setCountryFocused(target.attributes.name.value)},
       };
-    
+
       const Map = styled.div`
       margin: 1rem auto;
     
@@ -76,7 +76,7 @@ const Map = ({ hovered, setHovered, focused, setFocused, clicked, setClicked}) =
     return (
         <div style={style}>
           <Map>
-            <VectorMap {...africa} layerProps={layerProps} checkedLayers={countryId}/>
+            <VectorMap {...africa} layerProps={layerProps} checkedLayers={countryId || null}/>
           </Map>
 
           {/* <p>Hovered: {countryHovered && <code>{countryHovered}</code>}</p> */}
@@ -84,4 +84,4 @@ const Map = ({ hovered, setHovered, focused, setFocused, clicked, setClicked}) =
       );
 } 
 
-export default Map;
+export default AfricaMap;

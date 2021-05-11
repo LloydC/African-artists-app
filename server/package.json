@@ -1,5 +1,5 @@
 {
-  "name": "starter-code",
+  "name": "african-artists-app-server",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -12,5 +12,11 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.0",
+    "express": "^4.17.1",
+    "spotify-web-api-node": "^5.0.2"
   }
 }
