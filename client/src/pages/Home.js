@@ -63,7 +63,19 @@ function Home() {
                     alignItems: 'center',
                     padding: '8%'
                 }}>
-                <h1>Country clicked: {clicked}</h1>
+                <p>You've selected <b>{clicked}</b></p>
+                <br/>
+                <p>Artists from {clicked}: </p>
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                {artists !== undefined && artists.artists.items.map(artist =>(
+                  <div key={artist.id} style={{marginTop: '5px'}}>
+                    <h3>{artist.name}</h3>
+                    {artist.images.length === 0 && <img alt='artist_photo' style={{borderRadius: '50%'}} src={'/images/Default-profile.png'} width='100px' height='100px'/>}
+                    {artist.images.length !== 0 && <img alt='artist_photo' style={{borderRadius: '50%'}} src={artist.images[0].url} width='100px' height='100px'/>}
+                    {artist.followers?.total && <p>Followers: {artist.followers.total}</p>}
+                  </div>
+                ))}
+                </div>
               </div>}
             </div>
           </div>
