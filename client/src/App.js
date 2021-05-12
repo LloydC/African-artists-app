@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/login" component={LoginPage}/>
           <Route exact path="/register" component={RegisterPage}/>
         </Switch>
-      <Footer style={{ textAlign: 'center'}}>African Artists ©2021 Created by King Code</Footer>
+      {/* <Footer style={{ textAlign: 'center'}}>African Artists ©2021 Created by King Code</Footer> */}
       </Layout>
     </Router>
   );

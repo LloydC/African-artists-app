@@ -1,7 +1,7 @@
 import 'antd/dist/antd.css';
 import React, { useState, useEffect } from 'react';
 import AfricaMap from '../components/AfricaMap';
-import { Layout } from 'antd';
+import { Layout, Spin } from 'antd';
 const { Content } = Layout;
 
 function Home() {
@@ -64,6 +64,7 @@ function Home() {
                     alignItems: 'center',
                     padding: '8%'
                 }}>
+                  {artists === undefined && clicked!== 'None' && <Spin size="large"/>}
                   {artists !== undefined && artists.artists.items.length === 0 ? 
                   <h1>No artists from {clicked} </h1> :
                   <>
