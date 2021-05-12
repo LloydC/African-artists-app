@@ -27,9 +27,8 @@ function Home() {
 
     return (
         <Content className="site-layout" style={{ padding: '0 50px'}}>
-          <div className="site-layout-background home-container" style={{ padding: 24, minHeight: 640, height: '100vh'}}>
-            {/* <div className="home-container"> */}
-                <AfricaMap hovered={hovered} clicked={clicked} setHovered={setHovered} setClicked={setClicked}/>
+          <div className="home-container site-layout-background">
+              <AfricaMap hovered={hovered} clicked={clicked} setHovered={setHovered} setClicked={setClicked}/>
               
               {hovered === 'None' && clicked ==='None' && <Welcome/>}
               {clicked!== 'None' && <div className="right-section">
@@ -39,7 +38,6 @@ function Home() {
                     <ArtistsList artists={artists} clicked={clicked}/>
                 }
               </div>}
-            {/* </div> */}
           </div>
         </Content>
     )
