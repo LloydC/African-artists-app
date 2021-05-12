@@ -12,7 +12,6 @@ import LoginPage from './pages/Login';
  import { Layout } from 'antd';
 // const { Footer } = Layout;
 
-
 function App() {
   return (
     <Router>
