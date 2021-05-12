@@ -16,7 +16,10 @@ const spotifyApi = new SpotifyWebApi({
 
   spotifyApi
   .clientCredentialsGrant()
-  .then(data => spotifyApi.setAccessToken(data.body['access_token']))
+  .then(data => {
+        console.log('The access token expires in ' + data.body['expires_in']);
+      spotifyApi.setAccessToken(data.body['access_token']);
+    })
   .catch(error => console.log('Something went wrong when retrieving an access token', error));
 // Our routes go here:
 app.get('/search', (req, res)=>{
