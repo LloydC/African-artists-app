@@ -6,11 +6,11 @@ import {
   Route
 } from "react-router-dom";
 import Nav from './components/Nav';
-import HomePage from './pages/Home';
+import HomePage from './pages/Home/Home';
 import LoginPage from './pages/Login';
  import RegisterPage from './pages/Register';
-import { Layout } from 'antd';
-const { Footer } = Layout;
+ import { Layout } from 'antd';
+// const { Footer } = Layout;
 
 
 function App() {
