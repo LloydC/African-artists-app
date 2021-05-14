@@ -1,15 +1,20 @@
 import React from 'react';
 import Artist from './Artist/Artist';
+import { Typography, Spin  } from 'antd';
+
+const { Title } = Typography;
 
 function ArtistsList({ artists, clicked }){
     return (
         <>
-            <h1>Artists from {clicked} </h1>
-            <div style={{display: 'flex', justifyContent: 'space-around',flexWrap: 'wrap'}}>
-                {artists !== undefined && artists.artists.items.map(artist =>(
+            <Title level={1}>Artists from {clicked} </Title>
+            {artists === undefined && clicked !== 'None' ?
+             <Spin size="large"/> :
+             <div style={{display: 'flex', justifyContent: 'space-around',flexWrap: 'wrap'}}>
+                {artists.artists.items.map(artist =>(
                     <Artist artist={artist}/>
                 ))}
-            </div>
+            </div>}
         </>
     );
 }

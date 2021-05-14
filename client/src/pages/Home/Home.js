@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import AfricaMap from '../../components/AfricaMap';
 import ArtistsList from '../../components/ArtistsList';
 import Welcome from '../../components/Welcome';
-import { Layout, Spin } from 'antd';
+import { Layout } from 'antd';
 const { Content } = Layout;
 
 function Home() {
@@ -32,7 +32,7 @@ function Home() {
               
               {hovered === 'None' && clicked ==='None' && <Welcome/>}
               {clicked!== 'None' && <div className="right-section">
-                  {artists === undefined && clicked!== 'None' && <Spin size="large"/>}
+                  {/* {artists === undefined && clicked!== 'None' && <Spin size="large"/>} */}
                   {artists !== undefined && artists.artists.items.length === 0 ? 
                     <h1>No artists from {clicked} </h1> : 
                     <ArtistsList artists={artists} clicked={clicked}/>
