@@ -2,8 +2,11 @@ import React, {useState} from 'react';
 import { VectorMap } from '@south-paw/react-vector-maps';
 import styled from 'styled-components'
 import africa from '../assets/africa.json';
+import { Typography } from 'antd';
 
-const style = { margin: '4rem auto', width: '100%', height: '100vh',};
+const { Paragraph} = Typography;
+
+const style = { margin: '3rem auto', width: '100%', height: '100vh',};
 
 const findCountryId = (name) => {
   return africa.layers.find(country => country.name === name ).id;
@@ -78,7 +81,7 @@ const AfricaMap = ({ hovered, setHovered, focused, setFocused, clicked, setClick
           <Map>
             <VectorMap {...africa} layerProps={layerProps} checkedLayers={countryId || null}/>
           </Map>
-          {clicked !== 'None' && <p style={{textAlign: 'center'}}>You've selected <b>{clicked}</b></p>}
+          {clicked !== 'None' && <Paragraph style={{textAlign: 'center'}}>You've selected <b>{clicked}</b></Paragraph>}
         </div>
       );
 } 

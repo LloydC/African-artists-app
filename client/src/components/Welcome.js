@@ -1,4 +1,7 @@
 import React from 'react';
+import { Typography } from 'antd';
+
+const { Paragraph, Title } = Typography;
 
 function Welcome(){
     return (
@@ -7,15 +10,12 @@ function Welcome(){
             height: '100vh',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            marginTop: '100px'
         }}>
-        <h1>Welcome Username</h1>
-        <br/>
-        <p>Check out the map or search for Artists we know with African Heritage</p>
-        <br/>
-        <p>LAUNCH MUSIC PLAYER</p>
-        <iframe title="embedded-test" src="https://open.spotify.com/embed/playlist/3ctCB0A3pLPNh0KCKvwOHD" width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <Title level={1}>Welcome Username</Title>
+        <Paragraph>Check out the map or search for Artists we know with African Heritage</Paragraph>
+        <iframe title="embedded-test" src="https://open.spotify.com/embed/playlist/3ctCB0A3pLPNh0KCKvwOHD" width="50%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
     );
 
