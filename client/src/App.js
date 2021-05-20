@@ -5,6 +5,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 import Nav from './components/Nav';
 import HomePage from './pages/Home/Home';
 import LoginPage from './pages/Login';
@@ -13,13 +14,15 @@ import LoginPage from './pages/Login';
 // const { Footer } = Layout;
 
 function App() {
+  const { user, isAuthenticated } = useAuth0();
+
   return (
     <Router>
-      <Nav isLoggedIn={true}/>
+      <Nav isLoggedIn={isAuthenticated}/>
 
       <Layout>
         <Switch>
-          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/" render={(props) => (<HomePage {...props} user={user} />)}/>
           <Route exact path="/login" component={LoginPage}/>
           <Route exact path="/register" component={RegisterPage}/>
         </Switch>
