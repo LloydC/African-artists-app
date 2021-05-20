@@ -1,4 +1,5 @@
 import React from "react";
+import LogoutButton from '../components/LogoutButton';
 import { useAuth0 } from "@auth0/auth0-react";
 import { Typography } from 'antd';
 
@@ -17,6 +18,7 @@ const Profile = () => {
         <Title level={2}>{user.name}</Title>
         <img src={user.picture} alt={user.name} style={{borderRadius: '50%'}} />
         <Paragraph>{user.email}</Paragraph>
+        <LogoutButton/>
       </div>
     )
   );
