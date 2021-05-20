@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { Auth0Provider } from "@auth0/auth0-react";
 import reportWebVitals from './reportWebVitals';
 import { ConfigProvider } from 'antd';
 import frFR from 'antd/lib/locale/fr_FR';
@@ -9,7 +10,13 @@ import frFR from 'antd/lib/locale/fr_FR';
 ReactDOM.render(
   <React.StrictMode>
     <ConfigProvider locale={frFR}>
-      <App />
+      <Auth0Provider
+      domain="dev-jzkemv6j.eu.auth0.com"
+      clientId="Wx18PFqe87jqzHuaJkIGA0FBfTJbA4N2"
+      redirectUri={window.location.origin}
+    >
+        <App />
+      </Auth0Provider>
     </ConfigProvider>
   </React.StrictMode>,
   document.getElementById('root')

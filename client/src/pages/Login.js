@@ -1,29 +1,30 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import LoginButton from '../components/LoginButton';
+// import { Form, Input, Button, Checkbox } from 'antd';
 
-const layout = {
-    labelCol: {
-      span: 8,
-    },
-    wrapperCol: {
-      span: 16,
-    },
-  };
-  const tailLayout = {
-    wrapperCol: {
-      offset: 8,
-      span: 16,
-    },
-  };
+// const layout = {
+//     labelCol: {
+//       span: 8,
+//     },
+//     wrapperCol: {
+//       span: 16,
+//     },
+//   };
+//   const tailLayout = {
+//     wrapperCol: {
+//       offset: 8,
+//       span: 16,
+//     },
+//   };
   
  
-const onFinish = (values) => {
-      console.log('Success:', values);
-};
+// const onFinish = (values) => {
+//       console.log('Success:', values);
+// };
   
-const onFinishFailed = (errorInfo) => {
-      console.log('Failed:', errorInfo);
-};
+// const onFinishFailed = (errorInfo) => {
+//       console.log('Failed:', errorInfo);
+// };
 
 
 function Login() {
@@ -31,8 +32,8 @@ function Login() {
         <div style={{ height: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
             <h1>Login To Your Account</h1>
             <br/>
-
-            <Form
+            <LoginButton/>
+            {/* <Form
             {...layout}
             name="basic"
             initialValues={{
@@ -76,7 +77,7 @@ function Login() {
                     Submit
                     </Button>
                 </Form.Item>
-            </Form>
+            </Form> */}
         </div>
     )
 }

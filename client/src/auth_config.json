@@ -1,0 +1,8 @@
+{
+    "domain": "dev-jzkemv6j.eu.auth0.com",
+    "clientId": "Wx18PFqe87jqzHuaJkIGA0FBfTJbA4N2",
+    "audience": "https://dev-jzkemv6j.eu.auth0.com/api/v2/",
+    "appOrigin": "http://localhost:4000",
+    "apiOrigin": "http://localhost:8000"
+  }
+  
