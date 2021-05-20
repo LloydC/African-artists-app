@@ -15,7 +15,7 @@ function Welcome({user}){
         }}>
         <Title level={1}>Welcome {user !== undefined ? user.name : ''}</Title>
         <Paragraph>Check out the map or search for Artists we know with African Heritage</Paragraph>
-        <iframe title="embedded-test" src="https://open.spotify.com/embed/playlist/3ctCB0A3pLPNh0KCKvwOHD" width="50%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe title="embedded-test" src="https://open.spotify.com/embed/playlist/3ctCB0A3pLPNh0KCKvwOHD" width="75%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
     );
 

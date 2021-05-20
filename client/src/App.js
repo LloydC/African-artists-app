@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Nav from './components/Nav';
-import HomePage from './pages/Home/Home';
-import LoginPage from './pages/Login';
+import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/Register';
 import ProfilePage from './pages/ProfilePage';
 import { Layout } from 'antd';

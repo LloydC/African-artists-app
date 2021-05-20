@@ -1,5 +1,5 @@
 import 'antd/dist/antd.css';
-import './Home.css';
+import './HomePage.css';
 import React, { useState, useEffect } from 'react';
 import AfricaMap from '../../components/AfricaMap';
 import ArtistsList from '../../components/ArtistsList';
@@ -7,13 +7,13 @@ import Welcome from '../../components/Welcome';
 import { Layout } from 'antd';
 const { Content } = Layout;
 
-function Home({user}) {
+function HomePage({user}) {
     const [hovered, setHovered] = useState('None');
     const [clicked, setClicked] = useState('None');
     const [artists, setArtists] = useState(undefined);
 
     const queryCountryMusic = async (country) => {
-      const music= await fetch(`http://localhost:3000/search?country=${country}`).then((response) => response.json())
+      const music = await fetch(`http://localhost:3000/search?country=${country}`).then((response) => response.json())
       return setArtists(music);
   }
     useEffect(()=>{
@@ -27,9 +27,7 @@ function Home({user}) {
 
     return (
         <Content className="site-layout" style={{ padding: '0 50px'}}>
-          <div className="home-container site-layout-background">
-              <AfricaMap hovered={hovered} clicked={clicked} setHovered={setHovered} setClicked={setClicked}/>
-              
+          <div className="home-container site-layout-background">      
               {hovered === 'None' && clicked ==='None' && <Welcome user={user}/>}
               {clicked!== 'None' && <div className="right-section">
                   {/* {artists === undefined && clicked!== 'None' && <Spin size="large"/>} */}
@@ -38,9 +36,10 @@ function Home({user}) {
                     <ArtistsList artists={artists} clicked={clicked}/>
                 }
               </div>}
+              <AfricaMap hovered={hovered} clicked={clicked} setHovered={setHovered} setClicked={setClicked}/>
           </div>
         </Content>
     )
 }
 
-export default Home
+export default HomePage;

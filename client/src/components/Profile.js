@@ -7,7 +7,8 @@ const { Paragraph, Title } = Typography;
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
-
+  console.log('user', user);
+  
   if (isLoading) {
     return <div>Loading ...</div>;
   }
