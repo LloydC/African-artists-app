@@ -6,7 +6,7 @@ const { Title, Paragraph } = Typography;
 
 function Artist({ artist, setSelectArtist}){
     return (
-        <div className="artist-container" key={artist.id} onClick={()=> setSelectArtist(artist) ||console.log('loading')  }>
+        <div className="artist-container" key={artist.id} onClick={()=> setSelectArtist(artist) }>
             <Title level={4}>{artist.name}</Title>
             {artist.images.length === 0 ? 
             <img className="artist-picture" alt='artist_photo'  src={'/images/Default-profile.png'}/> :
