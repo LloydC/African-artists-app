@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
 } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -22,12 +22,12 @@ function App() {
       <Nav isLoggedIn={isAuthenticated}/>
 
       <Layout>
-        <Switch>
-          <Route exact path="/" render={(props) => (<HomePage {...props} user={user} />)}/>
-          <Route exact path="/login" component={LoginPage}/>
-          <Route exact path="/register" component={RegisterPage}/>
-          <Route exact path="/profile" render={(props) => (<ProfilePage {...props} user={user} />)}/>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<HomePage user={user} />}/>
+          <Route path="/login" element={<LoginPage />}/>
+          <Route path="/register" element={<RegisterPage />}/>
+          <Route path="/profile" element={<ProfilePage user={user} />}/>
+        </Routes>
       {/* <Footer style={{ textAlign: 'center'}}>African Artists ©2021 Created by King Code</Footer> */}
       </Layout>
     </Router>
