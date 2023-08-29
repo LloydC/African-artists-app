@@ -14,8 +14,11 @@ function Nav({isLoggedIn}) {
             <Link to="/"><div className="logo" /></Link>
 
             <Menu theme="dark" mode="horizontal">
-              <Menu.Item key="1"><Link to="/login">Login</Link></Menu.Item>
-              <Menu.Item key="2"><Link to="/register">Register</Link></Menu.Item>
+              <Menu.Item key="1">Songs</Menu.Item>
+              <Menu.Item key="2">Artists</Menu.Item>
+              <Menu.Item key="3">Playlists</Menu.Item>
+              <Menu.Item key="4"><Link to="/login">Login</Link></Menu.Item>
+              <Menu.Item key="5"><Link to="/register">Register</Link></Menu.Item>
             </Menu>
           </Header>
         )

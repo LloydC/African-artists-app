@@ -39,12 +39,22 @@ rect:hover {
    stroke: black;
    fill: blue;
  }
- 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+ .welcome-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+ }
+
+ footer {
+  width: 100vw;
+  text-align: center; 
+  background: #001529 !important; 
+  color: rgba(255, 255, 255, 0.65) !important; 
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+ }

@@ -1,4 +1,3 @@
-import './App.css';
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -12,7 +11,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/Register';
 import ProfilePage from './pages/ProfilePage';
 import { Layout } from 'antd';
-// const { Footer } = Layout;
+import './App.css';
+const { Footer } = Layout;
 
 function App() {
   const { user, isAuthenticated } = useAuth0();
@@ -28,8 +28,8 @@ function App() {
           <Route path="/register" element={<RegisterPage />}/>
           <Route path="/profile" element={<ProfilePage user={user} />}/>
         </Routes>
-      {/* <Footer style={{ textAlign: 'center'}}>African Artists ©2021 Created by King Code</Footer> */}
       </Layout>
+      <Footer>Blend of African Music ©2023</Footer>
     </Router>
   );
 }

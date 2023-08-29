@@ -1,11 +1,12 @@
-import 'antd/dist/antd.css';
-import './HomePage.css';
 import React, { useState, useEffect } from 'react';
 import AfricaMap from '../../components/AfricaMap';
 import ArtistsList from '../../components/ArtistsList';
 import Welcome from '../../components/Welcome';
 import { Layout } from 'antd';
+import 'antd/dist/antd.css';
+import './HomePage.css';
 const { Content } = Layout;
+
 
 function HomePage({user}) {
     const [hovered, setHovered] = useState('None');

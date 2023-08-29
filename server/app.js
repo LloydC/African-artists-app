@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+const port = 3000;
 const express = require('express');
 const SpotifyWebApi = require('spotify-web-api-node');
 const cors = require('cors')
@@ -49,7 +49,6 @@ app.get('/search-artists', (req, res) =>{
         const result = JSON.stringify(data.body)
         console.log('The received data from the API: ', result);
         res.json(data.body.artists.items)
-        // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
         })
         .catch(err => console.log('The error while searching artists occurred: ', err));
 })
@@ -78,4 +77,4 @@ app.get('/tracks/:albumId', (req, res, next) => {
         });
 })
 
-app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
+app.listen(port, () => console.log(`African artists server running on port ${port} 🎧 🥁 🎸 🔊`));

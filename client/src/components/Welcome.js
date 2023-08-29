@@ -5,17 +5,10 @@ const { Paragraph, Title } = Typography;
 
 function Welcome({user}){
     return (
-        <div style={{
-            width: '100%',
-            height: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            marginTop: '100px'
-        }}>
-        <Title level={1}>Welcome {user !== undefined ? user.name : ''}</Title>
-        <Paragraph>Check out the map or search for Artists we know with African Heritage</Paragraph>
-        <iframe title="embedded-test" src="https://open.spotify.com/embed/playlist/3ctCB0A3pLPNh0KCKvwOHD" width="75%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <div className='welcome-container'>
+        <Title level={1}>{user !== undefined ? `Welcome ${user.name}` : 'Blend of African Music'}</Title>
+        <Paragraph>Select countries on the map to learn about their favourite artists </Paragraph>
+        {/* <iframe title="embedded-test" src="https://open.spotify.com/embed/playlist/3ctCB0A3pLPNh0KCKvwOHD" width="75%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe> */}
       </div>
     );
 
